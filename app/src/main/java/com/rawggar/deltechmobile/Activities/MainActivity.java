@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         shareIntent.setType("text/plain");
         shareIntent.putExtra(Intent.EXTRA_SUBJECT,"DelTech Mobile");
         shareIntent.putExtra(Intent.EXTRA_TEXT,"Hey! I found this great app for DTU students, " +
-                "Here's where you can download it: https://play.google.com/store/apps/details?id=com.rawggar.deltechmobile");
+                "Here it is: https://play.google.com/store/apps/details?id=com.rawggar.deltechmobile");
         startActivity(Intent.createChooser(shareIntent,"Share Via"));
     }
 
