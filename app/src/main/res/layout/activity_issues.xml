@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.IssuesActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/gray"></View>
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="40dp"
+            android:scrollbars="vertical"
+            android:clickable="true"
+            android:overScrollMode="never"
+            android:id="@+id/issues_recycler_view"></android.support.v7.widget.RecyclerView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@color/white"
+
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_image_add_button"
+                android:onClick="UploadImage"
+                android:id="@+id/btn_add_image"
+                android:background="@drawable/day_background_state"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"/>
+            <EditText
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:maxLines="5"
+                android:layout_height="wrap_content"
+                android:id="@+id/edt_issue"
+                android:layout_marginHorizontal="5dp"
+                android:textSize="13sp"
+                android:hint="..."/>
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_send_black_24dp"
+                android:onClick="UploadPost"
+                android:id="@+id/btn_post_issue"
+                android:background="@drawable/day_background_state"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>
