@@ -19,14 +19,17 @@
         android:gravity="center_horizontal"
         />
 
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:scrollbars="vertical"
-        android:clickable="true"
         android:overScrollMode="never"
         android:id="@+id/service_dialog_recycler_view">
     </android.support.v7.widget.RecyclerView>
+        </RelativeLayout>
 
     </LinearLayout>
 

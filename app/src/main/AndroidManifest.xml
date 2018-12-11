@@ -18,7 +18,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:networkSecurityConfig="@xml/network_security_config">
         <activity
             android:name=".Activities.SplashScreenActivity"
             android:screenOrientation="portrait">
@@ -45,5 +46,6 @@
             android:screenOrientation="portrait" />
         <activity android:name=".Activities.IssuesActivity"></activity>
     </application>
+
 
 </manifest>

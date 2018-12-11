@@ -237,7 +237,14 @@ public class IssuesActivity extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<ArrayList<IssuesModel>> call, Throwable t) {
-                    Toast.makeText(getApplicationContext(), "Problem with Network",Toast.LENGTH_SHORT).show();
+                    if (t instanceof IOException) {
+                        Toast.makeText(IssuesActivity.this, "this is an actual network failure :( inform the user and possibly retry", Toast.LENGTH_SHORT).show();
+                        // logging probably not necessary
+                    }
+                    else {
+                        Toast.makeText(IssuesActivity.this, "conversion issue! big problems :(", Toast.LENGTH_SHORT).show();
+                        // todo log to some central bug tracking service
+                    }
                 }
             });}
         recyclerView.setAdapter(mAdapter);

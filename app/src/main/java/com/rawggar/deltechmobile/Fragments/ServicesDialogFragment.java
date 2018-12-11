@@ -58,6 +58,7 @@ public class ServicesDialogFragment extends DialogFragment{
 
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setHasFixedSize(true);
 
         mAdapter = new ServicesDialogAdapter(getActivity(), servicePersonList, new CustomClickListener() {
             @Override
