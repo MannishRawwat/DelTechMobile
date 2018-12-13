@@ -246,7 +246,6 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/mess_day_button"
                         android:gravity="center_vertical"
                         android:text="Anti-Stalking Cell"
                         android:layout_marginLeft="50dp"
@@ -274,6 +273,49 @@
                 android:layout_height="1dp"
                 android:background="#B0B0B0"></View>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/day_background_state"
+                android:clickable="true"
+                android:onClick="AnimalClick"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:paddingVertical="3dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="Animal Rescue (PETA)"
+                        android:layout_marginLeft="50dp"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="98201 22602"
+                        android:textSize="10sp"
+                        android:layout_marginLeft="60dp"
+                        />
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_phone_black_24dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="25dp"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_height="1dp"
+                android:background="#B0B0B0"></View>
 
 
         </LinearLayout>

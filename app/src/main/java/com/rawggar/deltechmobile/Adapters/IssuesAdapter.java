@@ -17,7 +17,10 @@ import com.rawggar.deltechmobile.CustomClickListener;
 import com.rawggar.deltechmobile.Models.IssuesModel;
 import com.rawggar.deltechmobile.R;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 public class IssuesAdapter extends RecyclerView.Adapter<IssuesAdapter.MyViewHolder> {
     private ArrayList<IssuesModel> issuesList;
@@ -46,6 +49,12 @@ public class IssuesAdapter extends RecyclerView.Adapter<IssuesAdapter.MyViewHold
         String issuesDescription = issuesList.get(i).getDesc();
         myViewHolder.issuesDesc.setText(issuesDescription);
         String issuesUrl = issuesList.get(i).getUrl();
+        Date tempDate = issuesList.get(i).getCreatedAt();
+        String pattern = "yyyy-MM-dd";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+        String date = simpleDateFormat.format(tempDate);
+        String issuesPosted = date.toString();
+        myViewHolder.issuesPostDate.setText((issuesPosted));
         if(issuesList.get(i).getResolved()){
             myViewHolder.issuesResolve.setVisibility(View.VISIBLE);
         }
@@ -60,7 +69,7 @@ public class IssuesAdapter extends RecyclerView.Adapter<IssuesAdapter.MyViewHold
             //Glide.with(mContext).clear(myViewHolder.issuesImage);
             //myViewHolder.issuesImage.setImageDrawable(null);
             Glide.with(mContext).load(issuesUrl).apply(new RequestOptions()
-                    .placeholder(R.drawable.ic_image_placeholder).diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .placeholder(R.drawable.ic_image_loading_colour).diskCacheStrategy(DiskCacheStrategy.ALL)
                     .fitCenter()).into(myViewHolder.issuesImage);
             Log.d("ISSUE1", issuesUrl);
         }
@@ -68,7 +77,7 @@ public class IssuesAdapter extends RecyclerView.Adapter<IssuesAdapter.MyViewHold
 
             Glide.with(mContext).clear(myViewHolder.issuesImage);
             // remove the placeholder (optional); read comments below
-            myViewHolder.issuesImage.setImageDrawable(mContext.getResources().getDrawable(R.drawable.ic_image_not_available));
+            myViewHolder.issuesImage.setImageDrawable(mContext.getResources().getDrawable(R.drawable.ic_image_unavailable));
             Log.d("ISSUE", "no");
 
         }
@@ -83,6 +92,7 @@ public class IssuesAdapter extends RecyclerView.Adapter<IssuesAdapter.MyViewHold
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView issuesDesc;
+        public TextView issuesPostDate;
         public ImageView issuesImage;
         public View issuesResolve;
 
@@ -91,7 +101,7 @@ public class IssuesAdapter extends RecyclerView.Adapter<IssuesAdapter.MyViewHold
             issuesDesc =  view.findViewById(R.id.issues_desc);
             issuesImage = view.findViewById(R.id.issues_image);
             issuesResolve = view.findViewById(R.id.issues_resolved);
-
+            issuesPostDate = view.findViewById(R.id.issues_post_date);
         }
     }
 

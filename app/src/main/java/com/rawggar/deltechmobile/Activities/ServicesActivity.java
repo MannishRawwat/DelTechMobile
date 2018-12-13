@@ -232,6 +232,17 @@ public class ServicesActivity extends AppCompatActivity {
         startActivity(callIntent);
     }
 
+    public void AnimalClick(View v){
+        Intent callIntent = new Intent(Intent.ACTION_CALL);
+        callIntent.setData(Uri.parse("tel:98201 22602"));
+
+        if (ActivityCompat.checkSelfPermission(ServicesActivity.this,
+                Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        startActivity(callIntent);
+    }
+
     private boolean haveNetworkConnection() {
         boolean haveConnectedWifi = false;
         boolean haveConnectedMobile = false;
