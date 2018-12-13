@@ -20,7 +20,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_library_books_black_24dp"
+        android:src="@drawable/ic_satellite"
         android:paddingVertical="5dp"
         android:paddingHorizontal="10dp"
         android:layout_gravity="center_vertical"
@@ -36,6 +36,7 @@
         android:textColor="#393939"
         android:textSize="14sp"
         android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
         android:drawableRight="@drawable/ic_chevron_right_black_24dp"
         android:maxLines="5"
         />
